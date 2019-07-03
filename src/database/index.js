@@ -9,8 +9,9 @@ import databaseConfig from '../config/database';
 /**
  * import yours models here
  */
+import User from '../app/models/User';
 
-const models = []; // list of all models
+const models = [User]; // list of all models
 
 class Database {
   constructor() {
@@ -19,17 +20,25 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize(databaseConfig);
-    models
-      .map(model => model.init(this.connection))
-      .map(model => model.associate && model.associate(this.connection.models));
+    if (process.env.DB_HOST) {
+      console.log('testes2');
+      this.connection = new Sequelize(databaseConfig);
+      models
+        .map(model => model.init(this.connection))
+        .map(
+          model => model.associate && model.associate(this.connection.models)
+        );
+    }
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
-      useNewUrlParser: true,
-      useFindAndModify: true,
-    });
+    if (process.env.MONGO_URL) {
+      console.log('AQUIIII');
+      this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useFindAndModify: true,
+      });
+    }
   }
 }
 

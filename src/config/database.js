@@ -8,10 +8,10 @@ require('dotenv/config');
 // to use postgres needs: yarn add pg pg-hstore
 module.exports = {
   dialect: 'postgres',
-  host: 'localhost',
-  username: 'postgres',
-  password: '',
-  database: '',
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
   define: {
     timestamps: true,
     underscored: true, // to allow table_name format

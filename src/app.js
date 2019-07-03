@@ -9,7 +9,7 @@ import routes from './routes';
  * uncomment this line after SETUP .env and database/index.js file
  * with database connection
  */
-// import './database';
+import './database';
 
 class App {
   constructor() {

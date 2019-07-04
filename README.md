@@ -18,6 +18,12 @@ cd YOUR_PROJECT_NAME
 yarn
 ```
 
-- DONE... now your empty project is ready to WORK
+- SETUP your database as you prefer(local, remote, docker local...)
+- RENAME .env.example to .env, edit the informations
+- DONE... now your empty project is ready to WORK Just enter:
+
+```shell
+yarn dev
+```
 
 - [Documentation](https://github.com/uraquitanfilho/nodejsDocs)

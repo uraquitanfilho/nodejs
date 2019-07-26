@@ -3,6 +3,7 @@ import express from 'express';
 import Youch from 'youch';
 /** express-async-errors need to be imported before routes */
 import 'express-async-errors';
+import cors from 'cors';
 import routes from './routes';
 
 /**
@@ -20,6 +21,7 @@ class App {
   }
 
   middewares() {
+    this.server.use(cors());
     this.server.use(express.json());
   }
 

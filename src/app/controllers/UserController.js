@@ -1,4 +1,4 @@
-import User from '../models/User';
+import User from '../models/relational/User';
 
 class UserController {
   async index(req, res) {

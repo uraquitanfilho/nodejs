@@ -23,5 +23,13 @@ module.exports = {
     /* To allow declare next variable and never uses it (this is important to
     middlewares) */
     'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    'no-plusplus': 'off',
+    radix: 'off',
+    'no-console': 'off',
+    'func-names': 'off',
+    'import/no-named-as-default-member': 'off',
+    'no-unused-vars': 'off',
+    'global-require': 'off',
+    'import/no-dynamic-require': 'off',
   },
 };
